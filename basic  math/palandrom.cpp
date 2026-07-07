@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"enter n : ";
+    cin>>n;
+
+    int copy = n;
+    int reverse = 0;
+    while(n>0){
+        int last = n%10;
+        reverse = reverse * 10 +last;
+        n/=10;
+    }
+
+    if(reverse==copy){
+        cout<<"The number is palandrome";
+    }else{
+        cout<<"The number is not a palandrome";
+    }
+    return 0;
+}
