@@ -16,7 +16,7 @@ bool fn(int i,string str){
 }
 
 int main(){
-    string name = "madam";
+    string name = "A man, a plan, a canal: Panama";
    cout<<fn(0,name);
     return 0;
 }
