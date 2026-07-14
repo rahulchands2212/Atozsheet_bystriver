@@ -12,6 +12,11 @@ remove small value
 (n^2)/2
 remove constant
 n^2;  <=== this is TC
+
+
+best case = 0(n^2)
+worst case = 0(n^2)
+average case = 0(n^2)
  */
 
 int main(){
