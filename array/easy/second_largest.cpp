@@ -12,24 +12,36 @@ public:
             }
         }
       
-        //difference jis ka sab se kam wo second last element diff !=0 hona chaye
-        int index = -1;
-          int diff = INT_MAX;
+        // approch 1 => difference jis ka sab se kam wo second last element diff !=0 hona chaye
+        // int second = -1;
+        //   int diff = INT_MAX;
+        // for(int i=0;i<nums.size();i++){
+        //     int currdif = maximum-nums[i];
+        //     if(currdif!=0 && currdif<diff){
+        //         diff = currdif;
+        //         second = nums[i];
+        //     }
+        // }
+
+        // return second;
+
+
+        //approch 2;
+        int second = -1;
         for(int i=0;i<nums.size();i++){
-            int currdif = maximum-nums[i];
-            if(currdif!=0 && currdif<diff){
-                diff = currdif;
-                index = i;
+            if(nums[i]>second && nums[i]<maximum){
+                second = nums[i];
             }
         }
-        
-        if(index==-1){
-            return index;
-        }else{
-            return nums[index];
-        }
 
+        return second;
 
     }
 };
 
+int main(){
+    Solution s1;
+    vector<int>nums = {8, 8, 7, 6, 5};
+    cout<<s1.secondLargestElement(nums);
+    return 0;
+}
