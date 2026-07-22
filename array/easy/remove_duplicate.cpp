@@ -27,20 +27,32 @@ public:
         // return n;
 
  /*=====================================================================*/
-        // brute froce using set tc => nlogn + n
+        //brute froce using set tc => nlogn + n
+        //int n = nums.size();
+        // set<int>st;
+        // for(int i=0;i<n;i++){
+        //     st.insert(nums[i]);
+        // }
+
+        // int index = 0;
+        // for(auto i : st){
+        //     nums[index] = i;
+        //     index++;
+        // }
+        
+        // return index;
+/*======================================================================*/
+        //better approch two pointer;  work on only sorted array
         int n = nums.size();
-        set<int>st;
-        for(int i=0;i<n;i++){
-            st.insert(nums[i]);
+        int i = 0;  //first pointer
+        for(int j=1;j<n;j++){     //j is second pointer
+            if(nums[i]!=nums[j]){
+                nums[i+1] = nums[j];
+                i++;
+            }
         }
 
-        int index = 0;
-        for(auto i : st){
-            nums[index] = i;
-            index++;
-        }
-        
-        return index;
+        return i+1;
     }
 };
 
