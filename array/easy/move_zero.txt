@@ -1,0 +1,4 @@
+first zero elemet set ek pointer set
+second pointer tab allocate hoga jab first assgin ho jaye
+agar first pointer ==0 and second pointer not !=0 swap
+swap ke time a++ , normal b++;
