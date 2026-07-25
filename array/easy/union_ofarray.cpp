@@ -3,62 +3,82 @@ using namespace std;
 
 void unionArray(vector<int> &nums1, vector<int> &nums2)
 {
-    int i = 0, j = 0;
-    vector<int> temp;
-    while (i < nums1.size() && j < nums2.size())
-    {
-        if (nums1[i] == nums2[j])
-        {
-            if (temp.empty() || temp.back() != nums1[i])
-            {
-                temp.push_back(nums1[i]);
-            }
-             i++;
-                j++;
-        } 
-        else if (nums1[i] < nums2[j])
-        {
-            if ( temp.empty() || temp.back() != nums1[i])
-            {
-                temp.push_back(nums1[i]);
+    //two pointer
+    // int i = 0, j = 0;
+    // vector<int> temp;
+    // while (i < nums1.size() && j < nums2.size())
+    // {
+    //     if (nums1[i] == nums2[j])
+    //     {
+    //         if (temp.empty() || temp.back() != nums1[i])
+    //         {
+    //             temp.push_back(nums1[i]);
+    //         }
+    //          i++;
+    //             j++;
+    //     } 
+    //     else if (nums1[i] < nums2[j])
+    //     {
+    //         if ( temp.empty() || temp.back() != nums1[i])
+    //         {
+    //             temp.push_back(nums1[i]);
                 
-            }
-            i++;
-        }
-        else
-        {
-            if (temp.empty() || temp.back() != nums2[j])
-            {
-                temp.push_back(nums2[j]);
+    //         }
+    //         i++;
+    //     }
+    //     else
+    //     {
+    //         if (temp.empty() || temp.back() != nums2[j])
+    //         {
+    //             temp.push_back(nums2[j]);
                
-            }
-             j++;
-        }
-    }
+    //         }
+    //          j++;
+    //     }
+    // }
 
-    while (i < nums1.size())
-    {
-        if (temp.empty() || temp.back() != nums1[i])
-        {
-            temp.push_back(nums1[i]);
+    // while (i < nums1.size())
+    // {
+    //     if (temp.empty() || temp.back() != nums1[i])
+    //     {
+    //         temp.push_back(nums1[i]);
            
-        }
-         i++;
-    }
+    //     }
+    //      i++;
+    // }
 
-    while (j < nums2.size())
-    {
-        if (temp.empty() || temp.back() != nums2[j])
-        {
-            temp.push_back(nums2[j]);
+    // while (j < nums2.size())
+    // {
+    //     if (temp.empty() || temp.back() != nums2[j])
+    //     {
+    //         temp.push_back(nums2[j]);
            
-        }
-         j++;
+    //     }
+    //      j++;
+    // }
+
+    // for (int i : temp)
+    // {
+    //     cout << i << " ";
+    // }
+
+    //brute force
+    set<int>st;
+    for(int i=0;i<nums1.size();i++){
+        st.insert(nums1[i]);
     }
 
-    for (int i : temp)
-    {
-        cout << i << " ";
+    for(int i=0;i<nums2.size();i++){
+        st.insert(nums2[i]);
+    }
+
+    vector<int>temp;
+    for(auto i : st){
+        temp.push_back(i);
+    }
+
+    for(int i : temp){
+        cout<<i<<" ";
     }
 }
 
