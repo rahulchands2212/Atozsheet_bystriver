@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int sum = 0;
+        int maxi = INT_MIN;
+        int n = nums.size();
+
+        for(int i=0;i<n;i++){
+            sum = sum + nums[i];
+            cout<<maxi<<" ";
+            if(sum<0){
+                sum = 0;
+            }
+        }
+
+        return maxi;
+        
+    }
+};
+
+int main(){
+    vector<int>nums = {2, 3, 5, -2, 7, -4};
+    Solution s1;
+   cout<<s1.maxSubArray(nums);
+   return 0;
+}
