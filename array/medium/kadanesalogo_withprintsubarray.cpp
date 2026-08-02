@@ -10,7 +10,7 @@ public:
 
         for(int i=0;i<n;i++){
             sum = sum + nums[i];
-            maxi = max(maxi,sum);
+            cout<<maxi<<" ";
             if(sum<0){
                 sum = 0;
             }
