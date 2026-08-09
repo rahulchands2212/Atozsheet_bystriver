@@ -36,10 +36,42 @@ public:
     }
 };
 
+//striver sir optimse approch
+class Solution2
+{
+public:
+    int longestConsecutive(vector<int> &nums)
+    {
+      int len = INT_MIN;
+      unordered_set<int>st;
+
+      for(int i : nums){
+        st.insert(i);
+      }
+
+      for(auto it : st){
+        if(st.find(it-1) == st.end()){
+            int cnt = 1;
+            int x = it;
+
+            //where st.end() means not found
+            while(st.find(x+1) != st.end()){
+                x = x+1;
+                cnt++;
+            }
+
+            len = max(len,cnt);
+        }
+      }
+
+        return len;
+    }
+};
+
 int main()
 {
     vector<int> nums = {9,1,4,7,3,-1,0,5,8,-1,6};
-    Solution s1;
+    Solution2 s1;
     cout << s1.longestConsecutive(nums);
     return 0;
 }
