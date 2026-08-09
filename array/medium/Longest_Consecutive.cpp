@@ -10,7 +10,6 @@ public:
         int n = nums.size();
         int len = INT_MIN;
         int start = 0;
-        int temp_start = 0;
         int end = 1;
         int duplicate = 0;
         for (int i = 0; i < n - 1; i++)
