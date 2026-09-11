@@ -6,12 +6,10 @@ public:
     int maxProfit(vector<int>& nums) {
         int n = nums.size();
         int profit = 0;
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                    int curr = nums[j]-nums[i];
-                    profit = max(profit,curr);
-                
-            }
+        int costprice = nums[0];
+        for(int i=1;i<n;i++){
+            costprice = min(costprice,nums[i]);
+            profit = max(profit,nums[i]-costprice);
         }
         return profit;
     }
